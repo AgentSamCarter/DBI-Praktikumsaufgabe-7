@@ -1,17 +1,44 @@
+import com.mysql.cj.xdevapi.Result;
+
 import java.sql.*;
 
 public class test
 {
-    public static void main(String[] args) throws SQLException {
-        String pid = "p01";
-        Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:10","sam","password");
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("select o.aid, SUM(o.qty * o.dollars) as sales from dbi.orders as o where o.pid = '"+pid+"' group by o.aid");
+    public static void main(String[] args) throws SQLException
+    {
+        long start = System.currentTimeMillis();
+        Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:10","dbineu","123");
 
-        while (rs.next()) {
-            String aid = rs.getString("aid");
-            String sales = rs.getString("sales");
-            System.out.println(aid +": "+sales);
-        }
+        Statement st = conn.createStatement();
+
+        datenbank(10,conn);
+
+
+        long ende= System.currentTimeMillis();
+
+        System.out.println("Dauer der Anwendung  "+(ende-start));
+
+    }
+
+    static void datenbank (int i, Connection conn)
+    {
+        for ( i = 1; i <=1000 ; i++)
+        {
+            int test =i;
+
+            try {
+                PreparedStatement queryStatement = conn.prepareStatement("INSERT INTO dbi.branches VALUES ("+test+", 'Anne', 1000, 'abcdefghijklmnopqrstuvwxyz');");
+
+                queryStatement.executeUpdate(); //Executes the query
+                queryStatement.close();
+
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+
+
+     }
     }
 }
