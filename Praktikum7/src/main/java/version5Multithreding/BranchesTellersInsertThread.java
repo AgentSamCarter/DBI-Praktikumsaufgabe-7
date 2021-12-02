@@ -3,12 +3,12 @@ package version5Multithreding;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class BranchesInsertThread extends Thread{
+public class BranchesTellersInsertThread extends Thread{
 
-    int number;
+    int number; // n aus der Aufgabestellung
     Connection conn;
 
-    BranchesInsertThread(int number, Connection conn){
+    BranchesTellersInsertThread(int number, Connection conn){
         this.number = number;
         this.conn = conn;
     }

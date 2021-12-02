@@ -3,7 +3,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class Version01_Anne {
+public class FillTableStatement {
 
         public static void main(String[] args) throws SQLException
         {
