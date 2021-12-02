@@ -9,7 +9,7 @@ public class ConnectionPool {
             HikariDataSource hikari = new HikariDataSource();
 
             //Setting Hikari properties
-            hikari.setMaximumPoolSize(10);
+            hikari.setMaximumPoolSize(50);
             hikari.setDataSourceClassName("com.mysql.cj.jdbc.MysqlDataSource");
             hikari.addDataSourceProperty("serverName", "192.168.178.103");
             hikari.addDataSourceProperty("port", "3306");

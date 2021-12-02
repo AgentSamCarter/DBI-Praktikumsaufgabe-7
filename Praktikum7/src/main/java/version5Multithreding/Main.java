@@ -1,7 +1,6 @@
 package version5Multithreding;
 
 import com.zaxxer.hikari.HikariDataSource;
-import versionConnectionPooling.ConnectionPool;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -40,7 +39,7 @@ public class Main
         //Eingabe n
         System.out.println("Geben Sie n ein: ");
         int n = scan.nextInt();
-        ThreadOne t1 = new ThreadOne(n,conn1);
+        BranchesInsertThread t1 = new BranchesInsertThread(n,conn1);
         ThreadTwo t2 = new ThreadTwo(1,n * 25000,n,conn2);
         ThreadTwo t3 = new ThreadTwo((n * 25000)+1,n * 50000,n,conn3);
         ThreadTwo t4 = new ThreadTwo((n * 50000)+1,n * 75000,n,conn4);
@@ -51,11 +50,11 @@ public class Main
         t2.start();
         t3.start();
         t4.start();
-        t5.start();
         t1.join();
         t2.join();
         t3.join();
         t4.join();
+        t5.start();
         t5.join();
         long ende = System.currentTimeMillis();
         System.out.println(ende - start);

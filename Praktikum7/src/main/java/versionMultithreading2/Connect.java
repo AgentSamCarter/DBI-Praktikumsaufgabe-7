@@ -1,20 +1,20 @@
-package version4Lukas;
+package versionMultithreading2;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Connect
 {
-    public static java.sql.Connection dbConnection() throws SQLException
+    public static Connection dbConnection() throws SQLException
             // n = 10 : 18 sek
             // n = 20 : 38 sek
             // n = 50 : 92 sek
     {   //Wird verwendet um eine Verbindung zu einer MySQL-Datenbank herzustellen
         //Datenbank URL, Datenbank user und passwort werden hinterlegt
-        java.sql.Connection conn = null;
-        String connectionUrl = "jdbc:mysql://192.168.178.103:3306/DBI?rewriteBatchedStatements=true";
-        String connectionUser = "sam";
-        String connectionPassword ="password";
+        Connection conn = null;
+        String connectionUrl = "jdbc:mysql://192.168.232.130:3306/DBI?rewriteBatchedStatements=true";
+        String connectionUser = "dbi";
+        String connectionPassword ="dbi";
         //URL, USER und PASSWORD werden übergeben
         try
         {
@@ -30,7 +30,7 @@ public class Connect
         return conn;
     }
 
-    public static void dbDisconnect(java.sql.Connection conn) throws SQLException
+    public static void dbDisconnect(Connection conn) throws SQLException
     {
         conn.close();
     }
