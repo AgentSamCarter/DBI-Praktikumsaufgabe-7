@@ -16,7 +16,7 @@ public class Main
         stmt.executeUpdate("DROP TABLE IF EXISTS branches");
         System.out.println("Alle Tabellen wurden geloescht");
     }
-    //dbi3ffff1
+
     public static void main(String[] args) throws Exception
     {
 

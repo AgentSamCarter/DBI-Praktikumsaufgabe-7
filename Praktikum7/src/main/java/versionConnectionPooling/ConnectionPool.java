@@ -14,11 +14,11 @@ public class ConnectionPool {
             //Setting Hikari properties
             hikari.setMaximumPoolSize(10);
             hikari.setDataSourceClassName("com.mysql.cj.jdbc.MysqlDataSource");
-            hikari.addDataSourceProperty("serverName", "192.168.122.88");
+            hikari.addDataSourceProperty("serverName", "192.168.178.103");
             hikari.addDataSourceProperty("port", "3306");
             hikari.addDataSourceProperty("databaseName", "dbi");
-            hikari.addDataSourceProperty("user", "dbi");
-            hikari.addDataSourceProperty("password", "dbi");
+            hikari.addDataSourceProperty("user", "sam");
+            hikari.addDataSourceProperty("password", "password");
             hikari.setAutoCommit(false);
             hikari.addDataSourceProperty("rewriteBatchedStatements",true);
             return hikari;

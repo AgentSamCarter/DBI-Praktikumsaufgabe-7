@@ -69,7 +69,7 @@ public class Population {
         String name= "AAAAAAAAAAAAAAAAAAAA";
         String adress68 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
         int balance = 0;
-        int branchidAccount = 0;
+        int branchidTeller = 0;
         int accid = 0;
 
         String update = "INSERT INTO tellers VALUES (?, ?, ?, ?,?)";
@@ -78,12 +78,12 @@ public class Population {
         for ( int i = 1; i <= (number * 10); i++)
         {
             int telleridTeller = i;
-            branchidAccount=(int) (Math.random() * number + 1);
+            branchidTeller=(int) (Math.random() * number + 1);
 
             stmt.setInt(1, telleridTeller);
             stmt.setString(2, name);
             stmt.setInt(3, balance);
-            stmt.setInt(4, branchidAccount);
+            stmt.setInt(4, branchidTeller);
             stmt.setString(5, adress68);
             stmt.addBatch();
         }

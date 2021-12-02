@@ -9,7 +9,7 @@ public class Version03_Sihem
     // LENEVO Sihem Batch 4000 mit rewriteBatchedStatements and commit: n = 1 --> 4861   ms   / n = 50 ==> 288519 (closed all other apps) ms Kommentar: used drop and create as sql-script
     public static void main(String[] args) throws SQLException
     {
-        Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.232.130:3306/dbi?rewriteBatchedStatements=true","dbi","dbi");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.178.103:3306/dbi?rewriteBatchedStatements=true","sam","password");
         conn.setAutoCommit(false);
         long start = System.currentTimeMillis();
         datenbank(50,conn);
@@ -57,10 +57,10 @@ public class Version03_Sihem
                 queryStatement.setString(5, adress68);
                 queryStatement.addBatch();
 
-                /*if(i % 4000 == 0) {
+                if(i % 1000 == 0) {
                     queryStatement.executeBatch();
                     conn.commit();
-                }*/
+                }
             }
             queryStatement.executeBatch();
             conn.setAutoCommit(true);

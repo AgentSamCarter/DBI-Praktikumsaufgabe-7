@@ -4,9 +4,9 @@ public class Version02_Sihem
     // LENEVO Sihem: n = 1 --> 331067 ms
     public static void main(String[] args) throws SQLException
     {
-        Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.122.88:3306","dbi","dbi");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.122.88:3306","sam","password");
         long start = System.currentTimeMillis();
-        datenbank(10,conn);
+        datenbank(1,conn);
         long ende= System.currentTimeMillis();
         System.out.println("Dauer der Anwendung  "+(ende-start));
     }

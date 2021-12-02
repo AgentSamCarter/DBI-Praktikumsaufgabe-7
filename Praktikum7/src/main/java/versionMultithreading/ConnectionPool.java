@@ -11,7 +11,7 @@ public class ConnectionPool {
             //Setting Hikari properties
             hikari.setMaximumPoolSize(10);
             hikari.setDataSourceClassName("com.mysql.cj.jdbc.MysqlDataSource");
-            hikari.addDataSourceProperty("serverName", "10.1.143.18");
+            hikari.addDataSourceProperty("serverName", "192.168.178.103");
             hikari.addDataSourceProperty("port", "3306");
             hikari.addDataSourceProperty("databaseName", "dbi");
             hikari.addDataSourceProperty("user", "sam");

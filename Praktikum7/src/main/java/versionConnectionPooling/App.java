@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws SQLException {
 
-
         HikariDataSource hikari =  ConnectionPool.connectToDatabase();
         Connection connection = hikari.getConnection();
         PreparedStatement stmt = null;
